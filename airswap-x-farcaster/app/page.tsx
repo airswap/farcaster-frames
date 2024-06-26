@@ -6,8 +6,8 @@ import { DebugLink } from "./components/DebugLink";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "frames.js starter",
-    description: "This is a frames.js starter template",
+    title: "Airswap OTC links",
+    description: "Enter your AirSwap OTC orders. Let your followers discover trades from within Farcaster.",
     other: {
       ...(await fetchMetadata(new URL("/frames", appURL()))),
     },
@@ -19,11 +19,7 @@ export default async function Home() {
   // then, when done, return next frame
   return (
     <div className="p-4">
-      frames.js starter kit. The Template Frame is on this page, it&apos;s in
-      the html meta tags (inspect source). <DebugLink /> or see{" "}
-      <Link href="/examples" className="underline">
-        other examples
-      </Link>
+      Enter your OTC link below. A new frame will appear with a list of your OTC links. You can share that frame with your followers and have them fill your orders
     </div>
   );
 }
