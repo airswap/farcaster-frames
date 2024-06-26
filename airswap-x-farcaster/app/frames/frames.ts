@@ -1,11 +1,13 @@
 import { createFrames } from "frames.js/next";
 
 type State = {
-  counter: number;
+  url: string[];
 };
 
 export const frames = createFrames<State>({
   basePath: "/frames",
-  initialState: { counter: 0 },
+  initialState: {
+    url: []
+    },
   debug: process.env.NODE_ENV === "development",
 });
