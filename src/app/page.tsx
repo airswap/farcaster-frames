@@ -8,14 +8,12 @@ import { Metadata } from "next";
 // MetaData copied and adapted from here: https://github.com/horsefacts/echo-the-dolphin/blob/main/src/app/page.tsx
 
 export async function generateMetadata(): Promise<Metadata> {
-  const imageUrl = `${process.env["HOST"]}/api/images/start?date=${Date.now()}`;
-
   return {
     title: "AirSwap OTC Frames",
     description: "AirSwap OTC makers can paste OTC URLs for their followers to click in Farcaster",
     openGraph: {
       title: "AirSwap OTC Frames",
-      images: [imageUrl],
+      // images: [imageUrl],
     },
 
     other: {
@@ -28,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
             : "http://localhost:3000"
         )
       )),
-      "fc:frame:image": imageUrl,
+      // "fc:frame:image": imageUrl,
       // "fc:frame:post_url": postUrl,
       "fc:frame:input:text": "Paste your OTC URL here...",
       "fc:frame:button:1": "Click to upload OTC URL",
