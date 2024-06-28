@@ -9,13 +9,18 @@ export const GET = frames(async () => {
       // With query params
       <Button
         action="post"
-        target={{ pathname: "/route1", query: { foo: "bar" } }}
+        // FIXME: query should contain data that validates the user. e.g. fid (?)
+        target={{ pathname: "/urlForm", query: { fid: "fid" } }}
       >
-        Go to route 1
+        Upload OTC URL
       </Button>,
       // Without query params
-      <Button action="post" target="/route2">
-        Go to route 2
+      <Button
+        action="post"
+        // fid should be in query, to prevent malicious users from viewing user's OTC urls
+        target={{ pathname: "/urlList", query: { fid: "fid" } }}
+      >
+        View my OTC URLs
       </Button>,
     ],
   };
